@@ -2,6 +2,10 @@
 
 > A dockerized full stack starter project using Django, plus htmx and alpine.js to give a modern SPA feel to our multi-page server-side-rendered app
 
+Tests and CI | Code coverage | Style
+:----: | :----: | :----: | 
+[![Docker CI](https://github.com/gmso/django-htmx-alpine-starter/actions/workflows/docker-ci.yml/badge.svg)](https://github.com/gmso/django-htmx-alpine-starter/actions/workflows/docker-ci.yml) | [![codecov](https://codecov.io/gh/gmso/django-htmx-alpine-starter/branch/main/graph/badge.svg?token=YARRHZ5HZM)](https://codecov.io/gh/gmso/django-htmx-alpine-starter) | [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) |
+
 ## ➡️ Description
 
 Starter project with:
