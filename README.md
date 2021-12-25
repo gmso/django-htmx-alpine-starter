@@ -1,30 +1,44 @@
-# Django + HTMX + Alpine.js starter project
+# 〽️ Django + HTMX + Alpine.js starter project 〽️
+
+> A dockerized full stack starter project using Django, plus htmx and alpine.js to give a modern SPA feel to our multi-page server-side-rendered app
+
+## ➡️ Description
 
 Starter project with:
-- Django
+- [Django 3.2](https://www.djangoproject.com/)
    - Allauth with pages (login, signup, etc.)
    - Tests for existing views, models and logic (using pytest)
    - Abstract TimeStamped base model for other models
    - Other useful packages (django-extensions, zen-queries, django-compressor, etc.)
-- HTMX
+- [HTMX 1.6.1](https://htmx.org/)
    - Used to achieve a more SPA feeling, making for a better UX
    - Starting project uses `hx-boost` to boost `<a>` and `<form>` tags, which are submitted with AJAX instead of document reloads -> Much more fluid UX
    - Beware that above point may cause old path to stick around after submitting a form. I've solved this using the `hx-push-url` attribute on each form.
-- Alpine.js
+- [Alpine.js 3.7.1](https://alpinejs.dev/)
    - Used mainly for only client-side interactions, adding dynamic elements, like dropdown menus.
 
 All configured with Docker.
 
 The docker container also configures a Postgres database for simulation a production environment.
 
-Simply start the docker container to start working:
+## ➡️ Usage
+Clone the repository
+```
+mkdir fullstack_app
+cd fullstack_app
+git clone https://github.com/gmso/django-htmx-alpine-starter.git
+```
+
+Then simply start the docker container to start working:
 ```
 docker-compose up -d
 ```
 
-You can then work as usual on your Django project (localhost:8000 or 127.0.0.1:8000/).
+You can then work as usual on your Django project (`localhost:8000` or `127.0.0.1:8000`).
 
-## Debugging with Docker and VSCode
+Feel free to change existing email addresses and other configuration for your project.
+
+## ➡️ Debugging with Docker and VSCode
 
 Support for debugging remotely with VSCode is supported out-of-the-box.
 
@@ -38,7 +52,7 @@ To debug with Docker:
 
 4. Set some breakpoints in functions or methods executed when needed. Usually it's Model methods or View functions
 
-## Adding external libraries
+## ➡️ Adding external libraries
 
 It's better to install external libraries from from Docker directly
    - Production libraries
@@ -50,7 +64,7 @@ It's better to install external libraries from from Docker directly
    docker-compose exec web poetry add [pip_package] --dev
    ```
 
-## Deploy to Heroku
+## ➡️ Deploy to Heroku
 ### First setup
 1. [Create an account](https://www.heroku.com) and [install Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)  
 2. Create a new app on Heroku
