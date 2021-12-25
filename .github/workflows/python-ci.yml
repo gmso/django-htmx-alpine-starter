@@ -1,0 +1,45 @@
+name: Tests_and_CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    env:
+      MODULE_NAME: django-htmx-alpine-starter
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.7]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install poetry==1.1.8
+        poetry install --no-interaction --no-ansi
+    - name: Check format with black
+      run: |
+        black . --check
+    - name: Test with pytest
+      run: |
+        pytest -v --cov=./${{ env.MODULE_NAME }} --cov-report=xml:./coverage.xml
+    - name: Upload code coverage
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./coverage.xml
+        name: ${{ env.MODULE_NAME }}
+        flags: unittests
+        env_vars: OS,PYTHON
