@@ -31,10 +31,10 @@ jobs:
         poetry install --no-interaction --no-ansi
     - name: Check format with black
       run: |
-        black . --check
+        poetry run black . --check
     - name: Test with pytest
       run: |
-        pytest -v --cov=./${{ env.MODULE_NAME }} --cov-report=xml:./coverage.xml
+        poetry run pytest -v --cov=./${{ env.MODULE_NAME }} --cov-report=xml:./coverage.xml
     - name: Upload code coverage
       uses: codecov/codecov-action@v1
       with:
