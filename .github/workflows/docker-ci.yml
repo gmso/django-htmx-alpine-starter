@@ -1,4 +1,4 @@
-name: Tests_and_CI
+name: Docker CI
 
 on:
   push:
@@ -20,21 +20,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install poetry==1.1.8
-        poetry install --no-interaction --no-ansi
-    - name: Check format with black
-      run: |
-        poetry run black . --check
-    - name: Test with pytest
-      run: |
-        poetry run pytest -v --cov=./${{ env.MODULE_NAME }} --cov-report=xml:./coverage.xml
+    - name: Build the docker-compose stack
+      run: docker-compose up -d --build
+    - name: Check running containers
+      run: docker ps -a
+    - name: Run test suite
+      run: docker-compose exec web pytest -v --cov=./${{ env.MODULE_NAME }} --cov-report=xml:./coverage.xml
     - name: Upload code coverage
       uses: codecov/codecov-action@v1
       with:
