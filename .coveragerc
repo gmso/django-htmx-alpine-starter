@@ -2,5 +2,8 @@
 [run]
 source = django-htmx-alpine-starter
 omit =
-    # omit Django settings file
+    # omit Django configuration files
     *settings.py
+    ./manage.py
+    *asgi.py
+    *wsgi.py
