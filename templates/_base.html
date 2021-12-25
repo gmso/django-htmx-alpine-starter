@@ -1,0 +1,50 @@
+{% load static %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="household chore collaboration planner"/>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <title>{% block title %}Base{% endblock title %} {% if request.path != "/" %} | {% endif %} WEBSITE NAME</title>
+
+  {% compress css %}
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/global.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components.css' %}">
+  {% endcompress %}
+
+  <script defer src="https://unpkg.com/alpinejs@3.7.1/dist/cdn.min.js"></script>
+</head>
+
+<body>
+  <div id="page" hx-boost="true">
+    {% include 'components/header.html' %}
+    <main class="container">
+      {% block content %}{% endblock content %}    
+    </main>
+    {% include 'components/footer.html' %}
+  </div>
+
+  <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+  <script>
+    document.body.addEventListener('htmx:configRequest', (event) => {
+      event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+    })
+  </script>
+  {% load django_htmx %}
+  {% django_htmx_script %}
+</body>
+
+</html>

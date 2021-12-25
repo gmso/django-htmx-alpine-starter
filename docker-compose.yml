@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: python /code/manage.py runserver_plus 0.0.0.0:8000
+    environment:
+      - DJANGO_ENVIRONMENT=development
+      - DJANGO_SECRET_KEY=django-insecure-@04%uk08cz)mpenm#15f*5zg!0(pnc&p@2pzq6shfwi*%h900f
+      - DJANGO_DEBUG=True
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+      - 5678:5678 # for debugging in VSCode
+    depends_on:
+      - db
+  db:
+    image: postgres:11
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes: 
+     - postgres_data:/var/lib/postgresql/data
+
+volumes: 
+  postgres_data:

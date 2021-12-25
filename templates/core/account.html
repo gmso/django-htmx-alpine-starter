@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+
+{% block title %}My account{% endblock title %}
+
+{% block content %}
+
+<h3>{% trans "My account" %}</h3>
+<br>
+<br>
+<a class="centered_block" href="{% url 'account_change_password' %}">
+  <button class="wide green secondary">
+    {% trans "Change password" %}
+  </button>
+</a>
+<br>
+<br>
+<a class="centered_block" href="{% url 'core:dashboard' %}">
+  <button class="wide neutral primary">
+    {% trans "Back to dashboard" %}
+  </button>
+</a>
+
+{% endblock %}

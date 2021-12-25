@@ -1,0 +1,676 @@
+/* ################################ */
+/* ######### ROOT Globals ######### */
+/* ################################ */
+:root {
+  /* ######### Container ######### */
+  --container-max-width: 1080px;
+
+  /* ######### Scroll padding ######### */
+  scroll-padding-top: 100px; /* at least the height of the sticky header */
+  /* https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/ */
+
+  /* ######### Breakpoints ######### */
+  --breakpoint-width-very-small: 340px;
+  --breakpoint-width-small: 640px;
+  --breakpoint-width-medium: 768px;
+  --breakpoint-width-large: 1024px;
+  --breakpoint-height-small: 500px;
+
+  /* ######### Colors ######### */
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+
+  --color-brand-1: hsl(273, 95%, 95%);
+  --color-brand-2: hsl(273, 60%, 86%);
+  --color-brand-3: hsl(273, 58%, 76%);
+  --color-brand-4: hsl(273, 48%, 63%);
+  --color-brand-5: hsl(273, 38%, 41%);
+  --color-brand-6: hsl(273, 45%, 30%);
+  --color-brand-7: hsl(273, 60%, 23%);
+  --color-brand-8: hsl(273, 75%, 12%);
+  --color-brand-9: hsl(273, 95%, 5%);
+
+  --color-accent-1: hsl(333, 64%, 95%);
+  --color-accent-2: hsl(333, 59%, 85%);
+  --color-accent-3: hsl(334, 42%, 70%);
+  --color-accent-4: hsl(333, 40%, 55%);
+  --color-accent-5: hsl(333, 38%, 41%);
+  --color-accent-6: hsl(333, 44%, 35%);
+  --color-accent-7: hsl(333, 63%, 20%);
+  --color-accent-8: hsl(333, 69%, 15%);
+  --color-accent-9: hsl(333, 77%, 7%);
+
+  --color-red-1: hsl(348, 57%, 91%);
+  --color-red-1-trans: hsla(348, 100%, 97%, 0.7);
+  --color-red-2: hsl(345, 74%, 85%);
+  --color-red-2-trans: hsla(348, 100%, 94%, 0.6);
+  --color-red-3: hsl(348, 78%, 73%);
+  --color-red-4: hsl(348, 67%, 60%);
+  --color-red-5: hsl(348, 67%, 45%);
+  --color-red-6: hsl(348, 72%, 38%);
+  --color-red-7: hsl(348, 90%, 31%);
+  --color-red-8: hsl(348, 95%, 22%);
+  --color-red-9: hsl(347, 97%, 12%);
+
+  --color-orange-1: hsl(33, 90%, 90%);
+  --color-orange-2: hsl(33, 85%, 80%);
+  --color-orange-3: hsl(33, 80%, 70%);
+  --color-orange-4: hsl(33, 75%, 60%);
+  --color-orange-5: hsl(33, 70%, 50%);
+  --color-orange-6: hsl(33, 75%, 44%);
+  --color-orange-7: hsl(33, 80%, 36%);
+  --color-orange-8: hsl(33, 85%, 28%);
+  --color-orange-9: hsl(33, 95%, 18%);
+
+  --color-green-1: hsl(146, 89%, 83%);
+  --color-green-2: hsl(146, 57%, 72%);
+  --color-green-3: hsl(146, 49%, 63%);
+  --color-green-4: hsl(146, 37%, 48%);
+  --color-green-5: hsl(146, 50%, 36%);
+  --color-green-6: hsl(146, 58%, 30%);
+  --color-green-7: hsl(146, 64%, 24%);
+  --color-green-8: hsl(146, 73%, 17%);
+  --color-green-9: hsl(147, 81%, 10%);
+
+  --color-blue-1: hsl(210, 100%, 88%);
+  --color-blue-2: hsl(210, 96%, 82%);
+  --color-blue-3: hsl(210, 88%, 71%);
+  --color-blue-4: hsl(210, 84%, 60%);
+  --color-blue-5: hsl(210, 80%, 50%);
+  --color-blue-6: hsl(210, 86%, 36%);
+  --color-blue-7: hsl(210, 92%, 26%);
+  --color-blue-8: hsl(210, 96%, 15%);
+  --color-blue-9: hsl(211, 100%, 8%);
+
+  --color-yellow-1: hsl(58, 44%, 89%);
+  --color-yellow-2: hsl(57, 96%, 82%);
+  --color-yellow-3: hsl(57, 88%, 71%);
+  --color-yellow-4: hsl(57, 84%, 60%);
+  --color-yellow-5: hsl(57, 93%, 41%);
+  --color-yellow-6: hsl(57, 80%, 44%);
+  --color-yellow-7: hsl(57, 92%, 26%);
+  --color-yellow-8: hsl(58, 96%, 15%);
+  --color-yellow-9: hsl(59, 100%, 8%);
+
+  --color-neutral-1: hsl(0, 8%, 95%);
+  --color-neutral-2: hsl(0, 0%, 85%);
+  --color-neutral-3: hsl(0, 0%, 80%);
+  --color-neutral-4: hsl(0, 0%, 70%);
+  --color-neutral-5: hsl(0, 0%, 55%);
+  --color-neutral-6: hsl(0, 0%, 40%);
+  --color-neutral-7: hsl(0, 0%, 30%);
+  --color-neutral-8: hsl(0, 0%, 23%);
+  --color-neutral-9: hsl(0, 0%, 10%);
+
+  /* DEFAULTS: */
+  color: var(--color-neutral-8);
+  background-color: var(--color-neutral-1);
+
+  /* ######### Fonts ######### */
+  --font-family-1: 'Open Sans', sans-serif;
+  --font-family-2: 'Noto Serif', monospace;
+  /* DEFAULTS: */
+  font-family: var(--font-family-1);
+  font-size: var(--size-10);
+  line-height: 1;
+  text-align: left;
+  hyphens: auto;
+
+  /* ######### Sizes system ######### */
+  /*--size-1: 7.2rem;*/
+  --size-1: 6rem;
+  --size-2: 4.8rem;
+  --size-3: 3.6rem;
+  --size-4: 3rem;
+  --size-5: 2.4rem;
+  --size-6: 2rem;
+  --size-7: 1.8rem;
+  --size-8: 1.4rem;
+  --size-9: 1.2rem;
+  --size-10: 1rem;
+  --size-11: 0.8rem;
+  --size-12: 0.4rem;
+  --size-13: 0.2rem;
+
+  /* ######### Shadows/Elevation ######### */
+  --shadow-1: 0 1px 3px hsla(0, 0%, 0%, 0.12), 0 1px 2px hsla(0, 0%, 0%, 0.24);
+  --shadow-1-thick: 0 1px 3px hsla(0, 0%, 0%, 0.4),
+    0 1px 2px hsla(0, 0%, 0%, 0.24);
+  --shadow-2: 0 3px 6px hsla(0, 0%, 0%, 0.15), 0 2px 4px hsla(0, 0%, 0%, 0.12);
+  --shadow-2-thick: 0 3px 6px hsla(0, 0%, 0%, 0.4),
+    0 2px 4px hsla(0, 0%, 0%, 0.12);
+  --shadow-3: 0 10px 20px hsla(0, 0%, 0%, 0.15), 0 3px 6px hsla(0, 0%, 0%, 0.1);
+  --shadow-4: 0 15px 25px hsla(0, 0%, 0%, 0.15), 0 5px 10px hsla(0, 0%, 0%, 0.5);
+  --shadow-5: 0 20px 40px hsla(0, 0%, 0%, 0.2);
+  --shadow-inset-1: inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
+
+  /* ######### Gradients ######### */
+  --gradient-1: linear-gradient(
+    120deg,
+    var(--color-red-1) 70%,
+    var(--color-red-2) 100%
+  );
+  /* --gradient-1-trans: radial-gradient(
+    rgba(226, 226, 226, 0.8) 20%,
+    rgb(243, 241, 241)
+  ); */
+  --gradient-1-trans: linear-gradient(
+    0deg,
+    rgb(243, 241, 241) 10%,
+    rgba(226, 226, 226, 0.8),
+    rgb(243, 241, 241)
+  );
+  --gradient-2: linear-gradient(
+    0deg,
+    var(--color-red-2) 0%,
+    var(--color-red-1) 100%
+  );
+  --gradient-2-trans: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.9)
+  );
+  --gradient-3: linear-gradient(
+    180deg,
+    var(--color-neutral-7) 50%,
+    var(--color-neutral-8) 100%
+  );
+  --gradient-3-trans: linear-gradient(
+    0deg,
+    rgba(255, 251, 252, 0.9),
+    rgba(255, 251, 252, 1),
+    rgba(255, 251, 252, 0.9)
+  );
+  --gradient-4: linear-gradient(
+    180deg,
+    var(--color-neutral-2) 0%,
+    var(--color-neutral-3) 100%
+  );
+  --gradient-5: linear-gradient(
+    0deg,
+    var(--color-neutral-6) 0%,
+    var(--color-neutral-5) 100%
+  );
+  --gradient-6: linear-gradient(
+    180deg,
+    var(--color-neutral-1) 0%,
+    var(--color-neutral-2) 100%
+  );
+}
+
+/* ################################## */
+/* ######### Tags specifics ######### */
+/* ################################## */
+/* ######### Page display: Header | main-section | Footer ######### */
+body > div#page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+main {
+  flex: 1;
+  margin: 0 var(--size-10);
+  position: relative;
+  padding: 0 var(--size-10);
+}
+
+/* ######### Text tags ######### */
+h1 {
+  font-size: var(--size-2);
+  font-family: var(--font-family-2);
+  hyphens: none;
+  letter-spacing: -0.2rem;
+  margin: var(--size-4) 0;
+}
+
+h2 {
+  font-size: var(--size-3);
+  font-family: var(--font-family-2);
+  hyphens: none;
+  letter-spacing: -0.1rem;
+  margin: var(--size-4) 0 var(--size-7) 0;
+}
+
+h3 {
+  font-size: var(--size-4);
+  font-family: var(--font-family-2);
+  hyphens: none;
+  letter-spacing: -0.05rem;
+  margin: var(--size-4) 0 var(--size-7) 0;
+}
+
+h4 {
+  font-size: var(--size-5);
+  font-family: var(--font-family-2);
+  hyphens: none;
+  letter-spacing: -0.05rem;
+  margin: var(--size-4) 0 var(--size-7) 0;
+}
+
+h5 {
+  font-size: var(--size-6);
+  margin: var(--size-4) 0 var(--size-7) 0;
+}
+
+h6 {
+  font-size: var(--size-7);
+  margin: var(--size-4) 0 var(--size-7) 0;
+}
+
+p {
+  font-size: var(--size-9);
+  line-height: 1.7;
+  margin-top: var(--size-8);
+  text-align: justify;
+  hyphens: auto;
+}
+
+br {
+  display: block;
+  margin: var(--size-9) 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:visited {
+  color: inherit;
+}
+
+p > a {
+  text-decoration: underline;
+}
+
+code {
+  background-color: var(--color-red-1);
+  border-radius: 3px;
+}
+
+/* ######### Buttons ######### */
+button {
+  /* text-transform: uppercase; */
+  letter-spacing: 0.05rem;
+  font-size: var(--size-9);
+  font-family: var(--font-family-1);
+  /* font-weight: bold; */
+  display: inline-block;
+  cursor: pointer;
+  padding: var(--size-11) var(--size-11);
+  border: none;
+  /*border-bottom: 3px var(--color-neutral-6) solid;*/
+  box-shadow: var(--shadow-1);
+  border-radius: 3px;
+  transition: all 0.1s;
+  outline: none;
+}
+button:hover {
+  box-shadow: var(--shadow-inset-1);
+  transform: translateY(1px);
+}
+button:disabled,
+button:disabled:hover,
+button:disabled:active {
+  background: #ccc;
+  border-color: #ccc;
+  color: #959595;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+button.wide {
+  width: 100%;
+}
+button.large {
+  font-size: var(--size-8);
+  padding: var(--size-9) var(--size-9);
+  border-radius: 4px;
+}
+button.small {
+  font-size: var(--size-10);
+  padding: var(--size-12) var(--size-12);
+  border-radius: 2px;
+}
+button.tertiary {
+  text-decoration: underline;
+}
+button.brand.primary {
+  color: var(--color-white);
+  background-color: var(--color-brand-5);
+}
+button.brand.primary:hover {
+  background-color: var(--color-brand-4);
+}
+button.brand.primary:active {
+  background-color: var(--color-brand-3);
+}
+button.brand.secondary {
+  color: var(--color-brand-5);
+  background-color: var(--color-brand-2);
+}
+button.brand.secondary:hover {
+  background-color: var(--color-brand-1);
+}
+button.brand.secondary:active {
+  color: var(--color-brand-4);
+}
+button.brand.tertiary {
+  color: var(--color-brand-5);
+  background: none;
+}
+button.brand.tertiary:hover {
+  color: var(--color-brand-4);
+}
+button.brand.tertiary:active {
+  color: var(--color-brand-3);
+}
+button.accent.primary {
+  color: var(--color-white);
+  background-color: var(--color-accent-5);
+}
+button.accent.primary:hover {
+  background-color: var(--color-accent-4);
+}
+button.accent.primary:active {
+  background-color: var(--color-accent-3);
+}
+button.accent.secondary {
+  color: var(--color-accent-5);
+  background-color: var(--color-accent-2);
+}
+button.accent.secondary:hover {
+  background-color: var(--color-accent-1);
+}
+button.accent.secondary:active {
+  color: var(--color-accent-4);
+}
+button.accent.tertiary {
+  color: var(--color-accent-5);
+  background: none;
+}
+button.accent.tertiary:hover {
+  color: var(--color-accent-4);
+  text-decoration: underline;
+}
+button.accent.tertiary:active {
+  color: var(--color-accent-3);
+}
+button.red.primary {
+  color: var(--color-white);
+  background-color: var(--color-red-5);
+}
+button.red.primary:hover {
+  background-color: var(--color-red-4);
+}
+button.red.primary:active {
+  background-color: var(--color-red-3);
+}
+button.red.secondary {
+  color: var(--color-red-5);
+  background-color: var(--color-red-2);
+}
+button.red.secondary:hover {
+  background-color: var(--color-red-1);
+}
+button.red.secondary:active {
+  color: var(--color-red-4);
+}
+button.red.tertiary {
+  color: var(--color-red-5);
+  background: none;
+}
+button.red.tertiary:hover {
+  color: var(--color-red-4);
+  text-decoration: underline;
+}
+button.red.tertiary:active {
+  color: var(--color-red-3);
+}
+button.orange.primary {
+  color: var(--color-white);
+  background-color: var(--color-orange-5);
+}
+button.orange.primary:hover {
+  background-color: var(--color-orange-4);
+}
+button.orange.primary:active {
+  background-color: var(--color-orange-3);
+}
+button.orange.secondary {
+  color: var(--color-orange-5);
+  background-color: var(--color-orange-2);
+}
+button.orange.secondary:hover {
+  background-color: var(--color-orange-1);
+}
+button.orange.secondary:active {
+  color: var(--color-orange-4);
+}
+button.orange.tertiary {
+  color: var(--color-orange-5);
+  background: none;
+}
+button.orange.tertiary:hover {
+  color: var(--color-orange-4);
+  text-decoration: underline;
+}
+button.orange.tertiary:active {
+  color: var(--color-orange-3);
+}
+button.green.primary {
+  color: var(--color-white);
+  background-color: var(--color-green-5);
+}
+button.green.primary:hover {
+  background-color: var(--color-green-4);
+}
+button.green.primary:active {
+  background-color: var(--color-green-3);
+}
+button.green.secondary {
+  color: var(--color-green-5);
+  background-color: var(--color-green-2);
+}
+button.green.secondary:hover {
+  background-color: var(--color-green-1);
+}
+button.green.secondary:active {
+  color: var(--color-green-4);
+}
+button.green.tertiary {
+  color: var(--color-green-5);
+  background: none;
+}
+button.green.tertiary:hover {
+  color: var(--color-green-4);
+  text-decoration: underline;
+}
+button.green.tertiary:active {
+  color: var(--color-green-3);
+}
+.blue.primary {
+  color: var(--color-white);
+  background-color: var(--color-blue-5);
+}
+button.blue.primary:hover {
+  background-color: var(--color-blue-4);
+}
+button.blue.primary:active {
+  background-color: var(--color-blue-3);
+}
+button.blue.secondary {
+  color: var(--color-blue-5);
+  background-color: var(--color-blue-2);
+}
+button.blue.secondary:hover {
+  background-color: var(--color-blue-1);
+}
+button.blue.secondary:active {
+  color: var(--color-blue-4);
+}
+button.blue.tertiary {
+  color: var(--color-blue-5);
+  background: none;
+}
+button.blue.tertiary:hover {
+  color: var(--color-blue-4);
+  text-decoration: underline;
+}
+button.blue.tertiary:active {
+  color: var(--color-blue-3);
+}
+button.neutral.primary {
+  color: var(--color-white);
+  background-color: var(--color-neutral-7);
+}
+button.neutral.primary:hover {
+  background-color: var(--color-neutral-6);
+}
+button.neutral.primary:active {
+  background-color: var(--color-neutral-5);
+}
+button.neutral.secondary {
+  color: var(--color-neutral-6);
+  background-color: var(--color-neutral-2);
+}
+button.neutral.secondary:hover {
+  background-color: var(--color-neutral-1);
+}
+button.neutral.secondary:active {
+  color: var(--color-neutral-4);
+}
+button.neutral.tertiary {
+  color: var(--color-neutral-6);
+  background: none;
+}
+button.neutral.tertiary:hover {
+  color: var(--color-neutral-4);
+  text-decoration: underline;
+}
+button.neutral.tertiary:active {
+  color: var(--color-neutral-3);
+}
+button.wide {
+  width: 100%;
+}
+
+/* ######### Lists ######### */
+ul {
+  padding-left: var(--size-10);
+}
+li {
+  line-height: 1.4;
+  font-size: var(--size-9);
+}
+li::marker {
+  content: '► ';
+}
+
+/* ######### Utility classes ######### */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--container-max-width);
+}
+.centered_block {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.underlined {
+  text-decoration: underline;
+}
+.color-blue-light {
+  color: var(--color-blue-2);
+}
+.color-green-light {
+  color: var(--color-green-3);
+}
+.color-red-light {
+  color: var(--color-red-3);
+}
+
+/* ######### Forms (Django specific) ######### */
+form{
+  margin: var(--size-6) 0;
+}
+form p {
+  /*display: flex;
+  flex-direction: column;
+  align-items: flex-start;*/
+  margin: var(--size-5) 0;
+}
+form *.help {
+  display: none;
+}
+form p label {
+  display: inline-block;
+}
+form p input,
+form p select {
+  width: 96%;
+  border: none;
+  border-radius: 3px;
+  padding: var(--size-12);
+  box-shadow: var(--shadow-inset-1);
+}
+form p select {
+  width: 100%;
+}
+form *.helptext {
+  font-size: var(--size-10);
+  color: var(--color-neutral-5);
+  line-height: 1.7;
+}
+form ul li {
+  color: var(--color-neutral-5);
+  font-size: var(--size-10);
+}
+form ul.errorlist li {
+  color: var(--color-red-6);
+}
+form ul.errorlist li::marker {
+  content: "❌ ";
+}
+form p input#id_remember {
+  width: var(--size-4);
+}
+form fieldset {
+  font-size: var(--size-9);
+  padding: var(--size-10);
+  border: none;
+  border-radius: var(--size-10);
+  background-color: var(--color-neutral-2);
+  box-shadow: var(--shadow-inset-1);
+}
+form fieldset div.ctrlHolder {
+  margin-bottom: var(--size-7);
+}
+form fieldset div label span.verified {
+  color: var(--color-green-7);
+}
+form fieldset div label span.unverified {
+  color: var(--color-red-7);
+}
+form fieldset div label span.primary {
+  color: var(--color-blue-5);
+}
+form div.form-row {
+  font-size: var(--size-9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--size-9) 0;
+}
+form div.form-row input {
+  margin-right: var(--size-8);
+  height: var(--size-8);
+  width: var(--size-8);
+}
+form input#id_is_admin {
+  height: var(--size-7);
+  width: 50px;
+}
+form input#id_is_admin + span.helptext{
+  display: block;
+}

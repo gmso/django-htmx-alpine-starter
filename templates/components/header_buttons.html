@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<nav class="component-header-buttons">
+  {% if user.is_authenticated %}
+  <a href="{% url 'core:dashboard' %}">
+    <button class="neutral primary">{% trans "Dashboard" %}</button>
+  </a>
+  <a href="{% url 'account_logout' %}">
+    <button class="red primary">{% trans "Log out" %}</button>
+  </a>
+  {% else %}
+  <a href="{% url 'account_signup' %}">
+    <button class="neutral primary">{% trans "Sign up" %}</button>
+  </a>
+  <a href="{% url 'account_login' %}">
+    <button class="green primary">{% trans "Log in" %}</button>
+  </a>
+  {% endif %}
+</nav>

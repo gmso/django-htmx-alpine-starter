@@ -1,0 +1,31 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+
+{% block title %}Log in{% endblock title %}
+
+{% block content %}
+
+<h3>{% trans "Log in" %}</h3>
+
+
+<p>{% blocktrans %}If you have not created an account yet, then please
+<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+
+
+<form class="login" method="POST" action="{% url 'account_login' %}" hx-push-url="{% url 'core:dashboard' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button type="submit" class="wide green primary">{% trans "Log in" %}</button>
+  <br>
+</form>
+<a class="centered_block" href="{% url 'account_reset_password' %}">
+  <button class="wide neutral secondary">
+    {% trans "Forgot Password?" %}
+  </button>
+</a>
+
+{% endblock %}

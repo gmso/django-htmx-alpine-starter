@@ -1,0 +1,97 @@
+/* ----------- */
+/* header.html */
+/* ----------- */
+.component-header {
+  position: relative;
+  background-color: var(--color-neutral-8);
+  color: var(--color-white);
+  box-shadow: var(--shadow-1);
+}
+.component-header #header-top {
+  font-size: var(--size-7);
+  padding: var(--size-8) var(--size-10);
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.component-header #header-top #dropdown-button-wrapper a:hover{
+  text-decoration: underline;
+}
+.component-header #header-top #dropdown-button-wrapper button{
+  background-color: var(--color-neutral-7);
+}
+@media screen and (min-width: 1024px) {
+  .component-header #header-top #dropdown-button-wrapper{
+    display: none;
+  }
+}
+.component-header #header-top #link-buttons-wrapper{
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .component-header #header-top #link-buttons-wrapper{
+    display: block;
+  }
+}
+.component-header #header-top #link-buttons-wrapper a{
+  margin-left: var(--size-6);
+}
+/* .component-header #header-top #link-buttons-wrapper button{
+  color: var(--color-white);
+  background-color: var(--color-neutral-8);
+} */
+.component-header #header-top img#menu-icon{
+  color: var(--color-white);
+  width: var(--size-8);
+}
+
+/* -------------------- */
+/* header_dropdown.html */
+/* -------------------- */
+.component-dropdown {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 5;
+  box-shadow: var(--shadow-1);
+  color: var(--color-white);
+}
+@media screen and (min-width: 1024px) {
+  .component-dropdown {
+    display: none;
+  }
+}
+.component-dropdown ul {
+  margin: 0;
+  padding: 0;
+}
+.component-dropdown li {
+  font-size: var(--size-8);
+  text-align: center;
+  width: 100%;
+  padding: var(--size-8) 0;
+  background-color: var(--color-neutral-7);
+}
+.component-dropdown li:hover{
+  background-color: var(--color-neutral-6);
+  text-decoration: underline;
+
+}
+.component-dropdown li::marker{
+  content: "";
+}
+
+/* ------------------- */
+/* header_buttons.html */
+/* ------------------- */
+
+
+/* ----------- */
+/* footer.html */
+/* ----------- */
+.component-footer {
+  margin-top: var(--size-5);
+  padding: var(--size-11) 0;
+  color: var(--color-neutral-6);
+}

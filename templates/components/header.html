@@ -1,0 +1,19 @@
+{% load static %}
+
+<header class="component-header" x-data="{open:false}" @click.outside="open = false">
+  <div id="header-top" class="container">
+    <a @click="open = false" href="{% url 'core:root' %}"><strong>Header</strong></a>
+    <div id="link-buttons-wrapper">
+      {% include 'components/header_buttons.html' %}
+    </div>
+    <div id="dropdown-button-wrapper">
+      <button @click="open = !open">
+        <img x-show="!open" id="menu-icon" src="{% static 'img/menu_white.svg' %}" alt="Menu" x-transition:enter.duration.250ms.delay.250ms >
+        <img x-show="open" id="menu-icon" src="{% static 'img/close_white.svg' %}" alt="Menu" x-transition:enter.duration.250ms.delay.250ms style="display:none;">
+      </button>
+    </div>
+  </div>
+  <div id="wrapper-header-dropdown" >
+    {% include 'components/header_dropdown.html' %}
+  </div>
+</header>

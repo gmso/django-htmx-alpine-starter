@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+
+{% load i18n %}
+
+{% load static %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+  <h3>Landing Page</h3>
+  <br>
+  <br>
+  <a class="centered_block" href="{% url 'account_login' %}">
+    <button class="wide large green primary">
+      {% trans "Log in" %}
+    </button>
+  </a>
+  <br>
+  <br>
+  <a class="centered_block" href="{% url 'account_signup' %}">
+    <button class="wide large green secondary">
+      {% trans "Create account" %}
+    </button>
+  </a>
+
+{% endblock content %}

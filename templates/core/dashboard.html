@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+
+<h3>{% trans "Dashboard" %}</h3>
+<br>
+<br>
+<a class="centered_block" href="{% url 'core:account' %}">
+  <button class="wide green secondary">
+    {% trans "My account" %}
+  </button>
+</a>
+<br>
+<br>
+<a class="centered_block" href="{% url 'account_logout' %}">
+  <button class="wide red secondary">
+    {% trans "Log out" %}
+  </button>
+</a>
+
+{% endblock %}

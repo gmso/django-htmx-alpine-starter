@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+
+{% block title %}Log out{% endblock title %}
+
+{% block content %}
+
+<h3>{% trans "Log out" %}</h3>
+
+<p>{% trans 'Are you sure you want to sign out?' %}</p>
+
+<form method="post" action="{% url 'account_logout' %}" hx-push-url="{% url 'core:root' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button type="submit" class="wide red primary">{% trans "Log out" %}</button>
+</form>
+<br>
+<br>
+<a class="centered_block" href="{% url 'core:dashboard' %}">
+  <button class="wide neutral primary">
+    {% trans "Back to dashboard" %}
+  </button>
+</a>
+
+{% endblock %}
