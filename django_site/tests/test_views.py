@@ -60,10 +60,10 @@ def test_views_no_login_required(client, url, view, path, template):
     if url == "account_reset_password_from_key":
         reversed_path = reverse_lazy(
             url,
-            kwargs = {
-                "uidb36":"12346asd",
-                "key":"asd453",
-            }
+            kwargs={
+                "uidb36": "12346asd",
+                "key": "asd453",
+            },
         )
     else:
         reversed_path = reverse_lazy(url)

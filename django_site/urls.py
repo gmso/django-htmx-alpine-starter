@@ -25,7 +25,11 @@ urlpatterns += [
         name="account_change_password",
     ),
     # path("accounts/password/set/", AllauthViews.password_set, name="account_set_password"),
-    path("accounts/inactive/", AllauthViews.account_inactive, name="account_inactive"),
+    path(
+        "accounts/inactive/",
+        AllauthViews.account_inactive,
+        name="account_inactive",
+    ),
     # # E-mail
     # path("email/", AllauthViews.email, name="account_email"),
     # path(
