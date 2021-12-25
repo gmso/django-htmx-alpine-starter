@@ -1,5 +1,6 @@
 # .coveragerc to control coverage.py
 [run]
+source = django-htmx-alpine-starter
 omit =
     # omit Django settings file
     *settings.py
