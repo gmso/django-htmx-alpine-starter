@@ -8,6 +8,10 @@ services:
       - DJANGO_ENVIRONMENT=development
       - DJANGO_SECRET_KEY=django-insecure-@04%uk08cz)mpenm#15f*5zg!0(pnc&p@2pzq6shfwi*%h900f
       - DJANGO_DEBUG=True
+      - DJANGO_EMAIL_HOST=smtp.gmail.com
+      - DJANGO_EMAIL_PORT=587
+      - DJANGO_EMAIL_HOST_USER=example@gmail.com
+      - DJANGO_EMAIL_HOST_PASSWORD=examplepassword
     volumes:
       - .:/code
     ports:

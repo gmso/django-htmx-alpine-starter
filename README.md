@@ -90,6 +90,22 @@ It's better to install external libraries from from Docker directly
       ```
       heroku config:set DJANGO_DEBUG=False
       ```
+   4. DJANGO_EMAIL_HOST:
+      ```
+      heroku config:set DJANGO_EMAIL_HOST=[your_email_host]
+      ```
+   5. DJANGO_EMAIL_PORT:
+      ```
+      heroku config:set DJANGO_EMAIL_PORT=[your_email_port]
+      ```
+   6. DJANGO_EMAIL_HOST_USER:
+      ```
+      heroku config:set DJANGO_EMAIL_HOST_USER=[your_email_host_user]
+      ```
+   7. DJANGO_EMAIL_HOST_PASSWORD:
+      ```
+      heroku config:set DJANGO_EMAIL_HOST_PASSWORD=[your_email_host_password]
+      ```
 4. Set the stack to Docker containers using the app's name
    ```
    heroku stack:setcontainer -a [APP_NAME]
