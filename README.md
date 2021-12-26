@@ -69,7 +69,7 @@ It's better to install external libraries from from Docker directly
    ```
 
 ## ➡️ Deploy to Heroku
-### First setup
+### 0️⃣ First setup
 1. [Create an account](https://www.heroku.com) and [install Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)  
 2. Create a new app on Heroku
    ```
@@ -130,7 +130,7 @@ It's better to install external libraries from from Docker directly
    ```
 8. After deployment, check that the site's [security audit shows no warnings](https://djcheckup.com/)
 
-### Consecutive deployments to production
+### ♾️ Consecutive deployments to production
 Deploy by pushing to Heroku git repository:
 ```
 git push heroku main
