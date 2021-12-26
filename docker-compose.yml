@@ -12,6 +12,7 @@ services:
       - DJANGO_EMAIL_PORT=587
       - DJANGO_EMAIL_HOST_USER=example@gmail.com
       - DJANGO_EMAIL_HOST_PASSWORD=examplepassword
+      - DJANGO_DB_PASSWORD=postgres
     volumes:
       - .:/code
     ports:
