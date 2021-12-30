@@ -26,14 +26,20 @@ All configured with Docker.
 The docker container also configures a Postgres database for simulation a production environment.
 
 ## ➡️ Usage
-Clone the repository
+
+### 0️⃣ First usage
+
+Clone the repository, build the docker image and migrate the database
 ```
-mkdir fullstack_app
-cd fullstack_app
+mkdir myapp
+cd myapp
 git clone https://github.com/gmso/django-htmx-alpine-starter.git
+docker-compose up -d --build
+docker-compose exec web python manage.py migrate
 ```
 
-Then simply start the docker container to start working:
+### ♾️ Development
+Simply start the docker container to start working:
 ```
 docker-compose up -d
 ```
@@ -67,6 +73,11 @@ It's better to install external libraries from from Docker directly
    ```
    docker-compose exec web poetry add [pip_package] --dev
    ```
+
+Remember to rebuild the docker image after adding external packages!:
+```
+docker-compose up -d --build
+```
 
 ## ➡️ Deploy to Heroku
 ### 0️⃣ First setup
